@@ -1,20 +1,5 @@
 <%= form_for @product,  html: { class: "form-horizontal", style: "display:inline;" } do |f| %>
 
-<% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@product.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @product.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
   <div class="modal-body">
     <ul class="errors"></ul>
 
@@ -33,6 +18,6 @@
   </div>
   <div class="modal-footer">
     <%= f.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+    <%= link_to "Back", products_path, class: "btn" %>
   </div>
 <% end %>
